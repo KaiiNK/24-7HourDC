@@ -77,10 +77,14 @@ player.play(resource);
 
 }
 
-player.on("idle", () => {
+player.on("stateChange", (oldState, newState) => {
+
+if (newState.status === "idle") {
 
 queue.shift();
 playMusic();
+
+}
 
 });
 
@@ -150,3 +154,4 @@ msg.reply(answer);
 });
 
 client.login(DISCORD_TOKEN);
+
