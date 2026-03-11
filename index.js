@@ -11,8 +11,8 @@ const {
 const play = require("play-dl");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const DISCORD_TOKEN = "";
-const GEMINI_KEY = "";
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
+const GEMINI_KEY = process.env.GEMINI_KEY;
  
 const genAI = new GoogleGenerativeAI(GEMINI_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
